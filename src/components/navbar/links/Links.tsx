@@ -47,8 +47,8 @@ export default function Links() {
                     )
                     : (
                         <NavLink item={{title: "Login", path: "/login"}}/>
-                        )
-                    }
+                    )
+                }
             </div>
 
             <Image
