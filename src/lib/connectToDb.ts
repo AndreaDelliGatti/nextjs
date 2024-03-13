@@ -1,11 +1,10 @@
 import mongoose from "mongoose";
-import { ConnectionStates } from "mongoose";
 
-const connection: { isConnected: ConnectionStates } = { isConnected: ConnectionStates.uninitialized };
+const connection: { isConnected?: any } = {  };
 
 export async function connectToDb() {
     try {
-        if (connection.isConnected == ConnectionStates.connected) {
+        if (connection.isConnected) {
             return;
         }
         
@@ -13,7 +12,7 @@ export async function connectToDb() {
         connection.isConnected = db.connection.readyState;
     }
     catch (e: any) {
-        console.log(e);
+        // console.log(e);
         throw new Error(e);
     }
 }

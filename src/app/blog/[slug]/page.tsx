@@ -13,8 +13,20 @@ export const generateMetadata = async ({params}: { params: { slug: string } }) =
     };
 }
 
+const getData = async (slug:string) => {
+    let res = await fetch(`http://localhost:3000/api/blog/${slug}`);
+    
+    if(!res.ok){
+        throw new Error("Something went wrong");
+    }
+    let posts = await res.json();
+
+    return posts;
+}
+
 export default async function SinglePost({ params }: { params: { slug: string } }) {
-    const post = await getPost(params.slug);
+    // const post = await getPost(params.slug);
+    const post = await getData(params.slug);
 
     return (
         <div className={styles.container}>

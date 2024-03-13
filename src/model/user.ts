@@ -4,8 +4,8 @@ import { Model, Schema, model, SchemaTimestampsConfig } from "mongoose";
 export type IUser = {
     username: string,
     email: string
-    password: string,
     isAdmin: boolean,
+    password?: string,
     img?: string
 } & SchemaTimestampsConfig
 
@@ -27,8 +27,7 @@ const userSchema = new Schema<IUser, UserModel>({
     },
     password: {
         type: String,
-        required: true,
-        min: 50
+        min: 8
     },
     img: {
         type: String
@@ -42,4 +41,4 @@ const userSchema = new Schema<IUser, UserModel>({
     timestamps: true
 });
 
-export const User: UserModel = mongoose.models.User || model<IUser, UserModel>("User", userSchema);
+export const User: UserModel = mongoose.models?.User || model<IUser, UserModel>("User", userSchema);

@@ -10,7 +10,7 @@ export const getPosts = async () => {
         return posts;
     }
     catch (e: any) {
-        console.log(e);
+        // console.log(e);
         throw Error(e);
     }
 }
@@ -22,7 +22,7 @@ export const getPost = async (slug: string) => {
         return post;
     }
     catch (e: any) {
-        console.log(e);
+        // console.log(e);
         throw Error(e);
     }
 }
@@ -34,7 +34,7 @@ export const getUsers = async () => {
         return users;
     }
     catch (e: any) {
-        console.log(e);
+        // console.log(e);
         throw Error(e);
     }
 }
@@ -47,7 +47,7 @@ export const getUser = async (id: string) => {
         return user;
     }
     catch (e: any) {
-        console.log(e);
+        // console.log(e);
         throw Error(e);
     }
 }

@@ -1,5 +1,12 @@
+import styles from "./register.module.css";
+import RegisterForm from "@/components/registerForm/registerForm";
+
 export default function Register() {
     return (
-        <div>Register page!</div>
+        <div className={styles.container}>
+            <div className={styles.wrapper}>
+                <RegisterForm/>
+            </div>
+        </div>
     )
 }
